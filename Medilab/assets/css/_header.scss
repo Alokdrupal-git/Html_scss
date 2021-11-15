@@ -1,0 +1,331 @@
+  
+  #topbar {
+    background: $bg-color;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+    z-index: 996;
+  
+    &.topbar-scrolled {
+      top: -40px;
+    }
+  
+    .contact-info {
+      a {
+        line-height: 1;
+        color: $body-color;
+        transition: 0.3s;
+  
+        &:hover {
+          color:$global-color;
+        }
+      }
+  
+      i {
+        color:$global-color;
+        padding-right: 4px;
+        margin-left: 15px;
+        line-height: 0;
+  
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  
+    .social-links a {
+      color: #437099;
+      padding-left: 15px;
+      display: inline-block;
+      line-height: 1px;
+      transition: 0.3s;
+  
+      &:hover {
+        color:$global-color;
+      }
+  
+      &:first-child {
+        border-left: 0;
+      }
+    }
+  }
+  
+  
+  #header {
+    background: $bg-color;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    top: 40px;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+  
+    &.header-scrolled {
+      top: 0;
+    }
+  
+    .logo {
+      font-size: 30px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-family: "Poppins", sans-serif;
+  
+      a {
+        color: $color;
+      }
+  
+      img {
+        max-height: 40px;
+      }
+    }
+  }
+  
+  /**
+  * Appointment Button *
+  */
+  
+  .appointment-btn {
+    margin-left: 25px;
+    background:$global-color;
+    color: $bg-color;
+    border-radius: 50px;
+    padding: 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+  
+    &:hover {
+      background: #166ab5;
+      color: $bg-color;
+    }
+  }
+  
+
+  .navbar {
+    padding: 0;
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+  
+    li {
+      position: relative;
+    }
+  
+    > ul > li {
+      position: relative;
+      white-space: nowrap;
+      padding: 8px 0 8px 20px;
+    }
+  
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: $color;
+      white-space: nowrap;
+      transition: 0.3s;
+      border-bottom: 2px solid $bg-color;
+      padding: 5px 2px;
+  
+      i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+      }
+  
+      &:hover {
+        color:$global-color;
+        border-color:$global-color;
+      }
+    }
+  
+    .active, li:hover > a {
+      color:$global-color;
+      border-color:$global-color;
+    }
+  
+    .dropdown {
+      ul {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: calc(100% + 30px);
+        margin: 0;
+        padding: 10px 0;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        background: $bg-color;
+        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+        transition: 0.3s;
+  
+        li {
+          min-width: 200px;
+        }
+  
+        a {
+          padding: 10px 20px;
+          font-size: 14px;
+          font-weight: 500;
+          text-transform: none;
+          color: #082744;
+          border: none;
+  
+          i {
+            font-size: 12px;
+          }
+  
+          &:hover {
+            color:$global-color;
+          }
+        }
+  
+        .active:hover, li:hover > a {
+          color:$global-color;
+        }
+      }
+  
+      &:hover > ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+      }
+  
+      .dropdown {
+        ul {
+          top: 0;
+          left: calc(100% - 30px);
+          visibility: hidden;
+        }
+  
+        &:hover > ul {
+          opacity: 1;
+          top: 0;
+          left: 100%;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  
+  
+  
+  /**
+  * Mobile Navigation 
+  */
+  
+  .mobile-nav-toggle {
+    color: $color;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+  
+    &.bi-x {
+      color: $bg-color;
+    }
+  }
+  
+
+  
+  .navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(28, 47, 65, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+  
+    .mobile-nav-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+  
+    ul {
+      display: block;
+      position: absolute;
+      top: 55px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      padding: 10px 0;
+      background-color: $bg-color;
+      overflow-y: auto;
+      transition: 0.3s;
+    }
+  
+    > ul > li {
+      padding: 0;
+    }
+  
+    a {
+      padding: 10px 20px;
+      font-size: 15px;
+      color: $color;
+      border: none;
+  
+      &:hover {
+        color:$global-color;
+      }
+    }
+  
+    .active, li:hover > a {
+      color:$global-color;
+    }
+  
+    .getstarted {
+      margin: 15px;
+    }
+  
+    .dropdown {
+      ul {
+        position: static;
+        display: none;
+        margin: 10px 20px;
+        padding: 10px 0;
+        z-index: 99;
+        opacity: 1;
+        visibility: visible;
+        background: $bg-color;
+        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  
+        li {
+          min-width: 200px;
+        }
+  
+        a {
+          padding: 10px 20px;
+  
+          i {
+            font-size: 12px;
+          }
+  
+          &:hover {
+            color:$global-color;
+          }
+        }
+  
+        .active:hover, li:hover > a {
+          color:$global-color;
+        }
+      }
+  
+      > .dropdown-active {
+        display: block;
+      }
+    }
+  }
